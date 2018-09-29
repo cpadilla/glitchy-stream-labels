@@ -1,8 +1,7 @@
 # glitchy-stream-labels
 Glitchy effect for twitch stream labels. This is intended to be used with OBS and Stream Labels.
 
-![alt text][demo]
-[demo]: https://i.imgur.com/fZ3dq0x.gif "Glitchy Stream Labels"
+![](https://i.imgur.com/fZ3dq0x.gif)
 
 ## Prerequisites
 This widget requires the Stream Labels application from Streamlabs, although you could just hack the file to use whatever source you want for the text. The glitch labels reads the values in a text file stored in a `labels` folder in the same directory.
