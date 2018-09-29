@@ -1,0 +1,140 @@
+/* VARIABLE ===================================== */
+
+$screen-sm-min:  768px;
+$screen-md-min: 992px;
+$color-dark-text: rgb(155, 155, 155);
+$text-color:  #ffffff;
+$background-color: transparent;
+
+/* BASE ========================================= */
+
+::selection {
+	background-color: #123;
+}
+
+html,
+body,
+.main {
+	height: 100%;
+}
+
+body {
+	font-family: 'Press Start 2P', Cursive;
+	text-align: center;
+	color: $text-color;
+	font-weight: bold;
+	font-size: 26px;
+	background-color: $background-color;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* LAYOUT ======================================== */
+
+.main {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	align-items:  center;
+    justify-content: space-between;
+    padding: 30px;
+    
+    .label {
+        word-wrap: break-word;
+    }
+}
+
+/* GLITCH ======================================== */
+
+.glitch {
+	position: relative;
+	display: inline-block;
+}
+ 
+.glitch::before,
+.glitch::after {
+	content: attr(data-scrabble-val);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	clip: rect(0, 100px, 0, 0);
+	overflow: hidden;
+	color: $text-color;
+	/* important: opaque background masks the original */
+	background-color: $background-color;
+}
+ 
+/* ABBERATION ================================== */
+
+
+
+/* ABBERATION: RED ----------------------------- */
+ 
+@keyframes glitch-anim-red {
+	$steps: 20;
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			clip: rect(random(48)+px, 9999px, random(49)+px, 0);
+			/* Random Positive/Negative Number */
+			transform: skewX((random(43) - 41)+deg);
+		}
+	}
+}
+ 
+@keyframes glitch-anim-red-mobile {
+	$steps: 20;
+	@for $i from 0 through $steps {
+		#{percentage($i*(1/$steps))} {
+			clip: rect(random(5)+px, 9999px, random(22)+px, 0);
+			/* Random Positive/Negative Number */
+			transform: skewX((random(43) - 41)+deg);
+		}
+	}
+}
+ 
+.glitch::before {
+	left: 3px;
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#F03005,direction=270,Strength=2);
+	text-shadow: -1.5px 0 1px rgba(239, 47, 5, 0.92);
+	animation: glitch-anim-red-mobile 1.5s infinite linear alternate-reverse;
+ 
+	@media (min-width: $screen-sm-min) {
+		animation: glitch-anim-red 1.5s infinite linear alternate-reverse;
+	}
+}
+ 
+/* ABBERATION: BLUE ---------------------------- */
+ 
+@keyframes glitch-anim-blue {
+	$steps:20;
+	@for $i from 0 through $steps{
+		#{percentage($i*(1/$steps))}{
+			clip: rect(random(58)+px ,9999px, random(59)+px, 0);
+			/* Random Positive/Negative Number */
+			transform: skewX((random(39) - 43)+deg);
+		}
+	}
+}
+ 
+@keyframes glitch-anim-blue-mobile {
+	$steps:20;
+	@for $i from 0 through $steps{
+		#{percentage($i*(1/$steps))}{
+			clip: rect(random(28)+px ,9999px, random(39)+px, 0);
+			/* Random Positive/Negative Number */
+			transform: skewX((random(39) - 43)+deg);
+		}
+	}
+}
+ 
+.glitch::after {
+	left: -3px;
+	text-shadow: -1.65px 0 1px rgba(35, 191, 208, 0.9);
+	filter: progid:DXImageTransform.Microsoft.Shadow(color=#23BFD0,direction=270,Strength=2);
+	animation: glitch-anim-blue-mobile 2s infinite linear alternate-reverse;
+ 
+	@media (min-width: $screen-md-min) {
+		animation: glitch-anim-blue 2s infinite linear alternate-reverse;
+	}
+}

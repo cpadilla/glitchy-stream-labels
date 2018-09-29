@@ -1,0 +1,512 @@
+/* VARIABLE ===================================== */
+/* BASE ========================================= */
+::selection {
+  background-color: #123;
+}
+
+html,
+body,
+.main {
+  height: 100%;
+}
+
+body {
+  font-family: "Press Start 2P", Cursive;
+  text-align: center;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 26px;
+  background-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* LAYOUT ======================================== */
+.main {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+}
+.main .label {
+  word-wrap: break-word;
+}
+
+/* GLITCH ======================================== */
+.glitch {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-scrabble-val);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip: rect(0, 100px, 0, 0);
+  overflow: hidden;
+  color: #ffffff;
+  /* important: opaque background masks the original */
+  background-color: transparent;
+}
+
+/* ABBERATION ================================== */
+/* ABBERATION: RED ----------------------------- */
+@keyframes glitch-anim-red {
+  0% {
+    clip: rect(26px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-10deg);
+  }
+  5% {
+    clip: rect(16px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-36deg);
+  }
+  10% {
+    clip: rect(14px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-6deg);
+  }
+  15% {
+    clip: rect(29px, 9999px, 41px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-20deg);
+  }
+  20% {
+    clip: rect(18px, 9999px, 22px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-9deg);
+  }
+  25% {
+    clip: rect(17px, 9999px, 5px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-19deg);
+  }
+  30% {
+    clip: rect(18px, 9999px, 3px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-13deg);
+  }
+  35% {
+    clip: rect(19px, 9999px, 2px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-6deg);
+  }
+  40% {
+    clip: rect(12px, 9999px, 41px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-21deg);
+  }
+  45% {
+    clip: rect(4px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-2deg);
+  }
+  50% {
+    clip: rect(44px, 9999px, 4px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-25deg);
+  }
+  55% {
+    clip: rect(9px, 9999px, 44px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-24deg);
+  }
+  60% {
+    clip: rect(45px, 9999px, 22px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-22deg);
+  }
+  65% {
+    clip: rect(14px, 9999px, 23px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-12deg);
+  }
+  70% {
+    clip: rect(5px, 9999px, 42px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  75% {
+    clip: rect(29px, 9999px, 3px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-5deg);
+  }
+  80% {
+    clip: rect(31px, 9999px, 2px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  85% {
+    clip: rect(2px, 9999px, 19px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-3deg);
+  }
+  90% {
+    clip: rect(6px, 9999px, 44px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-39deg);
+  }
+  95% {
+    clip: rect(16px, 9999px, 10px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-30deg);
+  }
+  100% {
+    clip: rect(48px, 9999px, 42px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(1deg);
+  }
+}
+@keyframes glitch-anim-red-mobile {
+  0% {
+    clip: rect(2px, 9999px, 6px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-38deg);
+  }
+  5% {
+    clip: rect(5px, 9999px, 20px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  10% {
+    clip: rect(2px, 9999px, 4px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-35deg);
+  }
+  15% {
+    clip: rect(2px, 9999px, 21px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-3deg);
+  }
+  20% {
+    clip: rect(3px, 9999px, 14px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-35deg);
+  }
+  25% {
+    clip: rect(2px, 9999px, 16px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-32deg);
+  }
+  30% {
+    clip: rect(2px, 9999px, 10px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-34deg);
+  }
+  35% {
+    clip: rect(3px, 9999px, 4px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-10deg);
+  }
+  40% {
+    clip: rect(2px, 9999px, 4px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-33deg);
+  }
+  45% {
+    clip: rect(5px, 9999px, 21px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-30deg);
+  }
+  50% {
+    clip: rect(5px, 9999px, 6px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-4deg);
+  }
+  55% {
+    clip: rect(2px, 9999px, 20px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(0deg);
+  }
+  60% {
+    clip: rect(5px, 9999px, 9px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-36deg);
+  }
+  65% {
+    clip: rect(4px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-7deg);
+  }
+  70% {
+    clip: rect(4px, 9999px, 14px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-2deg);
+  }
+  75% {
+    clip: rect(2px, 9999px, 3px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(0deg);
+  }
+  80% {
+    clip: rect(3px, 9999px, 18px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-31deg);
+  }
+  85% {
+    clip: rect(3px, 9999px, 11px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(0deg);
+  }
+  90% {
+    clip: rect(2px, 9999px, 3px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-11deg);
+  }
+  95% {
+    clip: rect(2px, 9999px, 8px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-6deg);
+  }
+  100% {
+    clip: rect(5px, 9999px, 2px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-33deg);
+  }
+}
+.glitch::before {
+  left: 3px;
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#F03005,direction=270,Strength=2);
+  text-shadow: -1.5px 0 1px rgba(239, 47, 5, 0.92);
+  animation: glitch-anim-red-mobile 1.5s infinite linear alternate-reverse;
+}
+@media (min-width: 768px) {
+  .glitch::before {
+    animation: glitch-anim-red 1.5s infinite linear alternate-reverse;
+  }
+}
+
+/* ABBERATION: BLUE ---------------------------- */
+@keyframes glitch-anim-blue {
+  0% {
+    clip: rect(14px, 9999px, 46px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-18deg);
+  }
+  5% {
+    clip: rect(6px, 9999px, 42px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-29deg);
+  }
+  10% {
+    clip: rect(47px, 9999px, 51px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-35deg);
+  }
+  15% {
+    clip: rect(36px, 9999px, 59px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-37deg);
+  }
+  20% {
+    clip: rect(39px, 9999px, 6px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-10deg);
+  }
+  25% {
+    clip: rect(32px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-23deg);
+  }
+  30% {
+    clip: rect(57px, 9999px, 33px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-28deg);
+  }
+  35% {
+    clip: rect(52px, 9999px, 40px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-16deg);
+  }
+  40% {
+    clip: rect(1px, 9999px, 30px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-29deg);
+  }
+  45% {
+    clip: rect(4px, 9999px, 52px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-40deg);
+  }
+  50% {
+    clip: rect(58px, 9999px, 58px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-4deg);
+  }
+  55% {
+    clip: rect(12px, 9999px, 48px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-33deg);
+  }
+  60% {
+    clip: rect(47px, 9999px, 34px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-27deg);
+  }
+  65% {
+    clip: rect(30px, 9999px, 19px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-33deg);
+  }
+  70% {
+    clip: rect(54px, 9999px, 30px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-24deg);
+  }
+  75% {
+    clip: rect(14px, 9999px, 47px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-21deg);
+  }
+  80% {
+    clip: rect(49px, 9999px, 46px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-13deg);
+  }
+  85% {
+    clip: rect(41px, 9999px, 13px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-30deg);
+  }
+  90% {
+    clip: rect(41px, 9999px, 45px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-32deg);
+  }
+  95% {
+    clip: rect(46px, 9999px, 1px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-19deg);
+  }
+  100% {
+    clip: rect(44px, 9999px, 14px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-30deg);
+  }
+}
+@keyframes glitch-anim-blue-mobile {
+  0% {
+    clip: rect(10px, 9999px, 17px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-31deg);
+  }
+  5% {
+    clip: rect(5px, 9999px, 9px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-22deg);
+  }
+  10% {
+    clip: rect(12px, 9999px, 8px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-12deg);
+  }
+  15% {
+    clip: rect(18px, 9999px, 33px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-40deg);
+  }
+  20% {
+    clip: rect(14px, 9999px, 8px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-33deg);
+  }
+  25% {
+    clip: rect(14px, 9999px, 8px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-42deg);
+  }
+  30% {
+    clip: rect(6px, 9999px, 29px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  35% {
+    clip: rect(10px, 9999px, 31px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-37deg);
+  }
+  40% {
+    clip: rect(22px, 9999px, 18px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  45% {
+    clip: rect(3px, 9999px, 39px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-40deg);
+  }
+  50% {
+    clip: rect(9px, 9999px, 18px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-25deg);
+  }
+  55% {
+    clip: rect(23px, 9999px, 25px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-13deg);
+  }
+  60% {
+    clip: rect(17px, 9999px, 6px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-36deg);
+  }
+  65% {
+    clip: rect(1px, 9999px, 31px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-6deg);
+  }
+  70% {
+    clip: rect(5px, 9999px, 20px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-29deg);
+  }
+  75% {
+    clip: rect(16px, 9999px, 1px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-26deg);
+  }
+  80% {
+    clip: rect(18px, 9999px, 3px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-14deg);
+  }
+  85% {
+    clip: rect(2px, 9999px, 20px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-28deg);
+  }
+  90% {
+    clip: rect(4px, 9999px, 19px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-28deg);
+  }
+  95% {
+    clip: rect(19px, 9999px, 29px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-36deg);
+  }
+  100% {
+    clip: rect(21px, 9999px, 25px, 0);
+    /* Random Positive/Negative Number */
+    transform: skewX(-23deg);
+  }
+}
+.glitch::after {
+  left: -3px;
+  text-shadow: -1.65px 0 1px rgba(35, 191, 208, 0.9);
+  filter: progid:DXImageTransform.Microsoft.Shadow(color=#23BFD0,direction=270,Strength=2);
+  animation: glitch-anim-blue-mobile 2s infinite linear alternate-reverse;
+}
+@media (min-width: 992px) {
+  .glitch::after {
+    animation: glitch-anim-blue 2s infinite linear alternate-reverse;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="main">
+            <div class="label" id="newestFollower" data-scrabble-val="New_Followers">New Follower</div>
+            <div class="label" id="recentDonation" data-scrabble-val="Top_Donations">Top Donations</div>
+            <div class="label" id="recentCheer" data-scrabble-val="Top_Cheers">Top Cheers</div>
+        </div>
+        <span id="sessionFollowersText" visibility="none"></span>
+        <span id="newFollowerText" visibility="none"></span>
+        <span id="sessionTopDonationsText" visibility="none"></span>
+        <span id="allTimeTopDonationsText" visibility="none"></span>
+        <span id="sessionTopCheerersText" visibility="none"></span>
+        <span id="allTimeTopCheerersText" visibility="none"></span>
+
+        </span>
+          <script>
+            var loc = window.location.pathname;
+            var dir = loc.substring(0, loc.lastIndexOf('/'));
+            var path = "file://" + dir;
+            var files = ["labels/session_followers.txt",
+                        "labels/most_recent_follower.txt",
+                        "labels/session_top_donations.txt",
+                        "labels/all_time_top_donations.txt",
+                        "labels/session_top_cheerers.txt",
+                        "labels/all_time_top_cheerers.txt"]
+            var fileTextId = ["sessionFollowersText",
+                              "newFollowerText",
+                              "sessionTopDonationsText",
+                              "allTimeTopDonationsText",
+                              "sessionTopCheerersText",
+                              "allTimeTopCheerersText"]
+
+            function readTextFiles() {
+                var i;
+                for (i=0;i<files.length;i++){
+                    var fileDisplayArea = document.getElementById(fileTextId[i]);
+                    function readTextFile(file)
+                    {
+                        var rawFile = new XMLHttpRequest();
+                        rawFile.open("GET", file, false);
+                        rawFile.onreadystatechange = function ()
+                        {
+                            if(rawFile.readyState === 4)
+                            {
+                                if(rawFile.status === 200 || rawFile.status == 0)
+                                {
+                                    var allText = rawFile.responseText;
+                                    fileDisplayArea.innerText = allText 
+                                }
+                            }
+                        }
+                        rawFile.send(null);
+                    }
+
+                    readTextFile(files[i]);
+                }
+            }
+
+            readTextFiles();
+          </script>
+          <script src="lib\animate.js"></script>
+    </body>
+</html>
